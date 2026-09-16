@@ -1,0 +1,230 @@
+{
+  "name": "create content for x",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 20
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -336,
+        -16
+      ],
+      "id": "29f3cb96-0717-49a6-983c-d14709ffeac1",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-5.1",
+          "mode": "list",
+          "cachedResultName": "GPT-5.1"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are a Saudi real estate expert, real estate marketing specialist, social media content creator, and AI image prompt engineer.\n\nYour task is to generate ONE useful, accurate, and engaging educational real estate post for Twitter/X targeting people interested in buying residential property in Saudi Arabia.\n\nChoose ONE specific real estate topic for each generation.\n\nPossible topics include:\n\nBuying instead of renting\nReal estate investment\nRental yield\nROI\nProperty valuation\nChoosing the right location\nProperty inspection\nMortgage and financing\nBuying mistakes\nApartment vs villa\nProperty features\nProperty maintenance\nRental income\nProperty appreciation\nReal estate market insights\nQuestions to ask before buying\nImportant things to check before purchasing\n\nGenerate EXACTLY TWO OUTPUT FIELDS:\n\ntweet\nimage_prompt\n\nWrite ONE concise and engaging Twitter/X post.\n\nThe tweet MUST be written in Arabic.\n\nRequirements:\n\nStart with a strong hook.\nExplain ONE useful real estate tip or insight.\nMake it practical for Saudi homebuyers or investors.\nUse a numerical example or calculation when useful.\nKeep it concise and suitable for Twitter/X.\nUse natural Modern Standard Arabic.\nAvoid unnecessary emojis.\nDo not use Markdown.\nDo not use hashtags unless genuinely useful.\nDo not make unrealistic promises.\nDo not guarantee investment returns.\n\nCreate a detailed ENGLISH prompt for an AI image generation model.\n\nIMPORTANT:\nThis must be a REAL image-generation prompt that can be copied directly into an AI image generator.\n\nThe image_prompt MUST visually represent the exact real estate topic discussed in the tweet.\n\nThe image must communicate the idea THROUGH VISUALS ONLY.\n\nTHE GENERATED IMAGE MUST CONTAIN ABSOLUTELY NO TEXT.\n\nDo NOT include:\n\nAny words\nAny letters\nAny numbers\nAny Arabic writing\nAny English writing\nAny signs with writing\nAny labels\nAny captions\nAny subtitles\nAny statistics displayed as text\nAny prices\nAny percentages\nAny financial figures\nAny charts containing text\nAny tables\nAny UI text\nAny readable documents\nAny logos\nAny brand names\nAny watermarks\nAny typography\nAny written information on walls, buildings, screens, papers, signs, vehicles, or objects\n\nThe image must be completely text-free.\n\nDo NOT attempt to visually write the tweet inside the image.\n\nDo NOT translate the tweet into visual text.\n\nDo NOT create infographic text.\n\nDo NOT create a presentation slide.\n\nDo NOT create a screenshot containing text.\n\nThe concept must be communicated entirely through realistic visual storytelling, architecture, objects, composition, lighting, and spatial relationships.\n\nThe image_prompt should specify:\n\nA realistic modern Saudi residential property or environment directly related to the tweet.\nAuthentic Saudi/Gulf architectural characteristics.\nAppropriate residential architecture such as a modern villa, townhouse, apartment building, or residential neighborhood.\nRealistic materials, proportions, furniture, landscaping, and architectural details.\nVisual elements that clearly communicate the specific real estate concept.\nPremium professional real estate photography.\nPhotorealistic quality.\nModern minimalist aesthetic.\nElegant and sophisticated composition.\nNatural realistic lighting.\nProfessional architectural photography.\nCinematic but realistic visual quality.\nClean and uncluttered composition.\n16:9 landscape composition optimized for Twitter/X.\nStrong visual storytelling without any written information.\n\nThe image must visually explain the tweet without using words.\n\nFor example:\n\nIf the tweet is about BUYING INSTEAD OF RENTING:\nShow a beautiful modern Saudi home with subtle visual storytelling suggesting ownership and long-term residence, such as a welcoming family-oriented home, a visible house key, and a strong sense of permanence and ownership. Do not show any written information.\n\nIf the tweet is about RENTAL YIELD:\nShow a realistic Saudi investment property with visual elements suggesting rental income and investment performance, such as multiple residential units, occupied apartments, rental activity, and a professional property-investment atmosphere. Do not show numbers, charts, or text.\n\nIf the tweet is about PROPERTY INSPECTION:\nShow a realistic professional inspecting a Saudi residential property, examining construction quality, walls, windows, electrical systems, plumbing, or structural details. Do not show documents containing text.\n\nIf the tweet is about LOCATION:\nShow a modern Saudi residential property in a desirable neighborhood with visual access to roads, schools, parks, shopping areas, and other relevant amenities. Communicate the importance of location through the environment only.\n\nIf the tweet is about BUYING MISTAKES:\nShow a realistic homebuyer carefully examining a property before making a decision, with visual emphasis on inspection and careful evaluation rather than impulsive purchasing. Do not use warning signs containing text.\n\nPeople may be included only when they help visually communicate the real estate concept.\n\nIf people are included:\n\nMake them look natural and realistic.\nUse appropriate Saudi/Gulf appearance and clothing when relevant.\nAvoid posed stock-photo expressions.\nAvoid exaggerated emotions.\nAvoid unnecessary people.\n\nSpecify:\n\nCamera angle\nLens and depth of field\nMain subject\nForeground\nBackground\nLighting\nArchitectural details\nInterior or exterior details\nVisual hierarchy\nRealistic materials\nPremium real estate photography style\n\nThe image should look like a professionally produced Saudi real estate marketing photograph, NOT a generic stock image.\n\nAt the end of the image_prompt, explicitly include:\n\n\"Absolutely no text, no words, no letters, no numbers, no Arabic writing, no English writing, no signs, no labels, no captions, no subtitles, no typography, no readable documents, no charts, no tables, no statistics, no prices, no percentages, no financial figures, no logos, no brand names, no watermarks, no UI elements, no written information anywhere in the image. Purely visual storytelling. Photorealistic, realistic Saudi architecture, natural proportions, no distorted buildings, no blurry elements, no artificial-looking people, no cartoon style, no generic stock photography, no clutter.\"\n\nThe image_prompt MUST be at least 150 words long.\n\nThe image_prompt MUST be specific to the tweet.\n\nEvery image must be visually different depending on the topic.\n\nNever generate a generic real estate image.\n\nNever use text to explain the concept.\n\nThe image must communicate the idea entirely through visual elements.\n\nYou MUST return ONLY a JSON OBJECT.\n\nThe JSON object MUST contain EXACTLY these two keys:\n\n\"tweet\"\n\"image_prompt\"\n\nDo NOT use any other keys.\n\nDo NOT use:\n\"svg\"\n\"svgcontent\"\n\"message\"\n\"content\"\n\"response\"\n\"result\"\n\"output\"\n\nThe output MUST look exactly like this:\n\n{\n\"tweet\": \"Arabic Twitter/X post here\",\n\"image_prompt\": \"Detailed English image generation prompt here\"\n}\n\nBoth fields are REQUIRED.\n\nNEVER omit \"image_prompt\".\n\nNEVER return only the tweet.\n\nNEVER return an empty \"image_prompt\".\n\nNEVER put image_prompt inside the tweet.\n\nNEVER combine the two fields into one text string.\n\nReturn valid JSON only."
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        96,
+        -16
+      ],
+      "id": "1b703f54-ec2f-47ae-b42e-02148a927f24",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "IB8dobWxUb3UHz7H",
+          "name": "OpenAi account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "model": "gpt-image-1",
+        "prompt": "={{ $json.message.content.image_prompt }}",
+        "options": {
+          "size": "1024x1024"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        384,
+        -16
+      ],
+      "id": "6fd8873c-9a7d-4bf5-af40-059cd177a138",
+      "name": "Generate an image",
+      "credentials": {
+        "openAiApi": {
+          "id": "IB8dobWxUb3UHz7H",
+          "name": "OpenAi account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "bucketName": "social-image111",
+        "fileName": "={{ $('Edit Fields').item.json.prompt_image }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [
+        560,
+        -16
+      ],
+      "id": "466ef06e-fba2-4334-916c-3e1e9f23b9a5",
+      "name": "Upload a file",
+      "credentials": {
+        "s3": {
+          "id": "0fBJNZ8UTjlq8MaE",
+          "name": "S3 account 8"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d9522404-1bf1-46e8-98eb-9c025ea16ed3",
+              "name": "prompt_image",
+              "value": "={{ Date.now() + '.png' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -128,
+        -16
+      ],
+      "id": "3962d7d8-e425-4724-a4ea-8d507765f7d1",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "tableId": "social_media_posts",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "tweet_text",
+              "fieldValue": "={{ $('Message a model').item.json.message.content.tweet }}"
+            },
+            {
+              "fieldId": "image_prompt",
+              "fieldValue": "={{ $('Message a model').item.json.message.content.image_prompt }}"
+            },
+            {
+              "fieldId": "image_url",
+              "fieldValue": "=https://ewpqdprgtdhzxuddknnn.supabase.co/storage/v1/object/public/social-image111/{{ $('Edit Fields').item.json.prompt_image }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        768,
+        -16
+      ],
+      "id": "a59cb95d-3f40-4940-8772-fb5ccd2adc5d",
+      "name": "Create a row",
+      "credentials": {
+        "supabaseApi": {
+          "id": "jZvAJWX6KIlTleaj",
+          "name": "Supabase account 6"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Generate an image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate an image": {
+      "main": [
+        [
+          {
+            "node": "Upload a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload a file": {
+      "main": [
+        [
+          {
+            "node": "Create a row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1ba7342d-a58f-4756-9bfc-cd134151f9b5",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "4fcae563fc5df2e30131b3e05bec3933d64d3adb141cc0d7eabd1485e49babc2"
+  },
+  "id": "YBq2Ur3ruoTgimZw",
+  "tags": []
+}
