@@ -1,0 +1,1 @@
+# n8n-supabase-ai-content-generator
